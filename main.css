@@ -219,7 +219,8 @@ svg {
 
 .opis{
   padding: 3.5em;   
-    background: rgba(13, 24, 33, 0.55);
+    background: rgba(13, 24, 33, 0.70);
+    backdrop-filter: blur(6px);
     border: 3px ridge #E5DFD0;
     border-radius: 12px;
     overflow: hidden;
@@ -297,6 +298,11 @@ svg {
   flex-direction: column;
   margin: 5%;
   background: rgba(13,24,33, 0.5);
+}
+
+.projekti-container a {
+   text-decoration: none; 
+   color: #ffffff;
 }
 
 .projekat-pregled {
@@ -702,6 +708,11 @@ footer {
 
 
 @media only screen and (max-width: 700px) {
+  p, ol, ul{
+    margin: 15px;
+    font-size: 12px;
+  }
+
    .modal-content {
     width: 90% !important;
     padding: 15px;
