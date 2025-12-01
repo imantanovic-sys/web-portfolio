@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+  
+    <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="blog2.css">
+
+</head>
+
+<body>
+  <div class="svg-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice" viewBox="0 0 1708.89 1299.78">
+    <path d="M45.92,442.65C-.21,348.82,125.3,205.68,54.13,115.11c-16.38-20.86-30.15-22.42-30.33-35.77-.64-68.16,561.8-138.76,698.14,4.7,87.7,92.28-139.38,207.98-200.12,233-50.16,20.64-93.6-14.72-123.88,6.77-35.33,24.98,69.28,182.69-12.94,162.75-90.96-22.05-289.42,57.15-339.09-43.78v-.14Z" style="fill: #36815c; stroke: #000; stroke-miterlimit: 10;"/>
+    <path d="M115.58,671.26c38.9-7.2,69.5,24.9,103.6,50.3,170.7,126.6,452.5,100.7,632.2,12.3,47.8-23.5,245.6-120.7,280.8-296.3,17.5-87.2-18.2-128.5,15.4-177.8,65.1-95.3,309.9-103.1,445.2,9.6,148.6,123.8,123.2,358.2,90.7,656.9-21.3,195.8-34.4,303-111.5,343.3-126.9,66.3-248.4-141.6-497.1-122.1-191.8,15-205.3,145.3-409.4,151.6-127.2,3.9-222.9-43.7-384.4-124.1-156.4-77.8-239.1-119-269-210.8-39-119.7,26.8-278.8,103.4-292.9h.1Z" style="fill: #36815c; stroke: #000; stroke-miterlimit: 10;"/>
+    <path d="M83.09,391.96c-36.28-73.86,62.21-186.23,6.21-257.53-12.84-16.38-23.74-17.63-23.87-28.14-.56-53.54,474.67-127.34,581.97-14.58,69.02,72.58-126.73,175.01-174.39,194.57-39.5,16.19-7.87-63.59-31.6-46.74-27.72,19.57-193.58,39.45-91.7,186.97,41.76,60.46-227.45,44.72-266.47-34.69l-.15.13Z" style="fill: #77e48b; stroke: #000; stroke-miterlimit: 10;"/>
+    <path d="M299.69,859.53c253.96-66.99.65,70.17,526.85-71.11,131.99-35.44,497.21-192.91,349.75-410.18-32.63-48.08,140.95-40.82,114.91-92.76-70.69-140.98,167.09,92.73,250.28,37.41,131.41-87.38,81.14,598.66,24.15,580.96-153.72-47.73,12.49,270.27-55.95,303.17-112.65,54.13-547.22-308.36-511.97-89.85,6.47,40.11-124.25-139.92-432,78.79-92.07,65.44-135.31-79.35-290.72-105.96-216.47-37.07-158.21-131.55-184.75-206.49-34.62-97.72-9.47-141.9,58.52-153.42,0,0,90.91,145.26,150.93,129.43Z" style="fill: #77e48b; stroke: #000; stroke-miterlimit: 10;"/>
+      </svg>
+    </div>
+
+    
+
+    <div id="navbar">
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="overlay">
+        <a href="index.html">Home</a>
+        <a href="projekti.html">Projekti</a>
+        <a href="galerija.html">Galerija</a>
+        <a href="blog.html" id="odabrano">Blog</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      
+      <a href="index.html" id="ime-u-cosku">Iman Tanović</a>
+      <a href="cv.pdf" id="cv"> CV </a>
+    </div>
+
+<div class="blog-grid">
+    <div class="blog-col right-col">
+        <div><h2>Blog</h2></div>
+        <div class="sidebar">
+            <p>Dio stranice posvećen zanimljivim vijestima iz IT svijeta.</p>
+        </div>
+    </div>
+    <div class="blog-col left-col">
+        <!-- Preuzeto sa https://mreza.bug.hr/umjetna-inteligencija/koji-modeli-umjetne-inteligencije-najvise-haluciniraju-55546 -->
+        <div class="posts">
+            <article class="post-card">
+            <img src="slike/B1.jpg" class="post-thumb" alt="thumb">
+            <div class="post-content">
+                <h3>Koji modeli umjetne inteligencije najviše haluciniraju?</h3>
+                <p class="post-excerpt">Prošli mjesec, više od 50 američkih sudskih slučajeva navodilo je lažne pravne izvore generirane umjetnom inteligencijom</p>
+                <a href="#modal1" class="read-more">Čitaj dalje →</a>
+            </div>
+        </article>
+
+        <div class="modal" id="modal1">
+              <div class="modal-content">
+                <a href="#" class="close" id="x">X</a>
+                <h3>Koji modeli umjetne inteligencije najviše haluciniraju?</h3>
+                <p> Odvjetnici su gubili slučajeve, bili suspendirani i morali su obavještavati sudove, sve zato što je njihova umjetna inteligencija samouvjereno izmišljala odgovore koji su izgledali stvarno. Pravna tehnologija samo je vrh ledenog brijega. </p> 
+                <img src="slike/B1.jpg" alt="">
+                <p> U svim industrijama, gotovo polovica rukovoditelja priznaje da donosi velike odluke na temelju izmišljenog sadržaja, a 70% projekata umjetne inteligencije propada, ne zato što je umjetna inteligencija loša, već zato što tvrtke odabiru pogrešne modele za svoj slučaj upotrebe. Ukupni gubici dosegli su više od 67 milijardi američkih dolara samo u 2024. godini.</p> 
+                <p> Visokoprecizni modeli poput GPT-5 i Geminija su impresivni, ali haluciniraju uvjerljivošću, što je užasno za proizvodnju, usklađenost ili sigurnosno kritične aplikacije. Pouzdani modeli poput Claudea žrtvuju neke mogućnosti za vrstu povjerenja koja je poduzećima zapravo potrebna. </p> 
+                <img src="slike/B11.jpg" alt="">
+                </div>
+            </div>
+
+        <!-- Preuzeto sa https://www.klix.ba/scitech/tehnologija/vraca-se-legenda-iz-1980-ih-prvi-novi-primjerci-commodorea-sisli-s-proizvodne-trake/251130034 -->
+        <article class="post-card">
+            <img src="slike/B2.jpg" class="post-thumb" alt="thumb">
+            <div class="post-content">
+                <h3>Prvi novi primjerci Commodorea sišli s proizvodne trake</h3>
+                <p class="post-excerpt">edan od najprodavanijih kućnih računara ikada Commodore 64 se vraća.</p>
+                <a href="#modal2" class="read-more">Čitaj dalje →</a>
+            </div>
+        </article>
+
+        <div class="modal" id="modal2">
+              <div class="modal-content">
+                <a href="#" class="close" id="x">X</a>
+                <h3>Vraća se legenda iz 1980-ih: Prvi novi primjerci Commodorea sišli s proizvodne trakeu</h3>
+                <p> Jedan od najprodavanijih kućnih računara ikada Commodore 64 se vraća. Naime, prvi novi primjerci ovog slavnog elektronskog uređaja iz 1980-ih su sišli s proizvodne trake, što znači da će se u Sjedinjenim Američkim Državama moći kupiti i prije novogodišnjih blagdana. </p> 
+                <p> Christian Simpson, izvršni direktor kompanije Commodore, objavio je videozapis iz tvornice u kojoj se računar proizvodi. Američki portal specijaliziran za izvještavanje o tehnologiji techradar piše da je ovo velika stvar, posebno za one koji imaju lijepe uspomene na ovaj računar.</p> 
+                <p> Njegova ponovna proizvodnja je pokrenuta uz savjete prvobitnih rukovoditelja ove američke kompanije, među kojima je Leonardo Tramiel, bivši potpredsjednik kompanije za proizvodnju videoigara Atari. Naime, Tramiel je zaslužan za nastanak nekada popularnog osmobitnog kućnog računara koji se prestao proizvoditi 1994. </p> 
+                <img src="https://cdn.mos.cms.futurecdn.net/HXctHbKFUDrTiaaMkadMr4.gif" alt="Commodore 64 Ultimate" loading="lazy" data-new-v2-image="true" data-original-mos="https://cdn.mos.cms.futurecdn.net/HXctHbKFUDrTiaaMkadMr4.gif" data-pin-media="https://cdn.mos.cms.futurecdn.net/HXctHbKFUDrTiaaMkadMr4.gif">
+                <p>Za mnoge je Commodore 64 bio prvi susret s računarom kao takvim. Operativni sistem onog iz 1980-ih je bio u tastaturi koja je bila povezana s posebnim uređajem za disketu i monitorom u boji.</p>
+                <p>Commodore 21. stoljeća fizički izgleda poput onog od prije 40 godina, ali njegov proizvođač tvrdi da nije riječ o replici. Dakle, dio performansi je poput performansi savremenih računara, kao što je mogućnost povezivanja na bežični internet, HDMI, USB-3, više procesora za obradu zvuka itd.</p>
+                <p>Ipak, fokus je na nostalgiji, koja će se odražavati i u tome da će na ovom uređaju biti dostupno više od 10 hiljada igara koje su bile dostupne na prvobitnom Commodoreu, piše <a href="https://www.techradar.com/">techradar.</a></p>
+            </div>
+            </div>
+
+
+        <!-- preuzeto sa https://mreza.bug.hr/eu/apple-maps-i-ads-pod-istragom-europske-unije-55629 -->
+        <article class="post-card">
+            <img src="slike/B3.JPG" class="post-thumb" alt="thumb">
+            <div class="post-content">
+                <h3>Apple Maps i Ads pod istragom Europske unije</h3>
+                <p class="post-excerpt">Regulatori Europske unije za zaštitu tržišnog natjecanja ispitat će treba li Apple Maps biti podložna strogim zahtjevima digitalnih pravila nakon što su obje usluge ispunile ključne kriterije. </p>
+                <a href="#modal3" class="read-more">Čitaj dalje →</a>
+            </div>
+        </article>
+        </div>
+
+         <div class="modal" id="modal3">
+              <div class="modal-content">
+                <a href="#" class="close" id="x">X</a>
+                <h3>Apple Maps i Ads pod istragom Europske unije</h3>
+                <p> Regulatori Europske unije za zaštitu tržišnog natjecanja ispitat će treba li Apple Maps biti podložna strogim zahtjevima digitalnih pravila nakon što su obje usluge ispunile ključne kriterije.</p> 
+                <img src="slike/B31.jpg" alt="">
+                <p> Appleova trgovina App Store, operativni sustav iOS i web preglednik Safari određeni su kao osnovne platformske usluge prema Zakonu o digitalnim tržištima prije dvije godine. Europska komisija objavila je kako ju je Apple obavijestio kako Apple Ads i Apple Maps ispunjavaju dva praga prema kojima bi trebali biti proglašeni "čuvarima vrata". Komisija ima 45 radnih dana za odluku hoće li im dodijeliti takvu oznaku. Dođe li do toga, Apple će imati šest mjeseci za usklađivanje.</p> 
+                <p> U Appleu tvrde kako njihov Ads nije veliki igrač na tržištu usluga online oglašavanja u Uniji, naročito u usporedbi s Googleom, Meta Platforms, Microsoftom, TikTokom ili X-om. Također su istaknuli kako ne koriste podatke iz drugih Appleovih usluga ili usluga trećih strana za ovu uslugu.</p> 
+                </div>
+            </div>
+    </div>
+</div>
+    <footer> © 2025 Iman Tanovic. All rights reserved</footer>
+</body>
+</html>
