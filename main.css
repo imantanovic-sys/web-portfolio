@@ -104,15 +104,15 @@ img{
   display: none;
 }
 
-/* --- Hamburger icon (fixed in first column) --- */
+/* --- Hamburger ikonica --- */
 .hamburger {
   position: fixed;
   top: 20px;
-  right: 30px; /* stays visually in column 1 */
+  right: 30px; 
   width: 30px;
   height: 24px;
   cursor: pointer;
-  z-index: 1001; /* above overlay */
+  z-index: 1001; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -130,7 +130,7 @@ img{
   background: #77e48b;
 }
 
-/* --- Hamburger animation when opened --- */
+/* --- Hamburger animacija --- */
 #menu-toggle:checked + .hamburger span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
@@ -143,7 +143,7 @@ img{
   transform: translateY(-10px) rotate(-45deg);
 }
 
-/* --- Overlay menu --- */
+/* --- sidebar --- */
 .overlay {
   position: fixed;
   top: 75px;
@@ -175,7 +175,7 @@ img{
   color: #77e48b;
 }
 
-/* --- Open overlay when checked --- */
+/* ---kad je checkirano otvara se sidebar--- */
 #menu-toggle:checked ~ .overlay {
   right: 0;
 }
@@ -295,15 +295,15 @@ img{
   font-size: 230%;
   margin: 4px;
   font-weight: 550;
-  background: #e5dfd0;              /* old beige keyboard color */
-  border: 2.5px solid #000000;         /* darker beige border */
-  border-radius: 0px;                /* slight rounding */
+  background: #e5dfd0;              
+  border: 2.5px solid #000000;         
+  border-radius: 0px;                
   
   color: #000000;
 
   box-shadow:
-    0 2px 0 #b8b2a3,                /* bottom edge */
-    0 4px 0 #58554e;                /* deep shadow */
+    0 2px 0 #b8b2a3,               
+    0 4px 0 #58554e;               
   
   transform: translateY(0);
   transition: transform 0.02s, box-shadow 0.08s;
@@ -399,7 +399,7 @@ svg {
 
 .projekat-pregled h3, .post-content h3, .opis h3, form h3{
   font-size: 28px;
-  color: #30C48E; /* tvoja nova accent boja */
+  color: #30C48E; 
   text-shadow: 1px 1px black;
 }
 
@@ -502,7 +502,7 @@ body:has(.modal:target) {
 
 
 
-/*button*/
+/*dugmici*/
 
 #dugme1, #x, .img-close {
   margin-left: 15.2%; 
@@ -735,8 +735,7 @@ body:has(.img-modal:target) {
     color: #000;
 }
 
-/* === TWO COLUMN LAYOUT WITH SEPARATE SCROLLING ===
-
+/* === dvije kolone sa odvojenim scrollanjima ===
 zamijenjene su strane jer sam u zadnji cas skontala da to bolje izgleda*/
 
 .blog-grid {
@@ -797,6 +796,9 @@ zamijenjene su strane jer sam u zadnji cas skontala da to bolje izgleda*/
   #cv{
     top: 16px;
   }
+  #ime-u-cosku{
+    top: 15px;
+   }
 
    .modal-content {
     width: 90% !important;
@@ -888,6 +890,7 @@ zamijenjene su strane jer sam u zadnji cas skontala da to bolje izgleda*/
 
     
 }
+
 
 
 
