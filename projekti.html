@@ -5,12 +5,21 @@
         <title>Iman Tanovic - Digitalni portfolio - Projekti</title>
         <meta name="description" content="Pregled projekata">
         <!-- Tagovi uradjeni sa opengraph.xyz -->
+        <!-- u sustini ne treba mi ovo za zadatak ali izgleda ljepse kad saljem prijateljima da pregledaju sajt-->
         <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="https://imantanovic-sys.github.io/web-portfolio/">
+        <meta property="og:url" content="https://imantanovic-sys.github.io/web-portfolio/projekti.html">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Iman Tanovic - Digitalni portfolio">
         <meta property="og:description" content="Pregled projekata">
-        <meta property="og:image" content="https://github.com/imantanovic-sys/web-portfolio/slike/OG.png">
+        <meta property="og:image" content="slike/OG.png">
+        
+        <!-- Twitter, Viber itd Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="imantanovic-sys.github.io">
+        <meta property="twitter:url" content="https://imantanovic-sys.github.io/web-portfolio/projekti.html">
+        <meta name="twitter:title" content="Iman Tanovic - Digitalni portfolio">
+        <meta name="twitter:description" content="Pregled projekata">
+        <meta name="twitter:image" content="slike/OG.png">
 
         <link rel="icon" type="image/png" href="slike/favicon.png">
         <link rel="stylesheet" type="text/css" href="main.css">
@@ -64,7 +73,7 @@
                 <h3>Vulnerability Scanner</h3>
                 <p> Ovaj projekat predstavlja razvoj vlastitog alata za automatsko otkrivanje sigurnosnih ranjivosti u web aplikacijama, sa fokusom na OWASP Top 10 standard. Alat analizira web aplikacije tako što simulira ponašanje napadača: šalje prilagođene zahtjeve, ubrizgava payload-e, ispituje reakcije servera i na osnovu njih otkriva potencijalne sigurnosne propuste. </p> 
                 <p> Sistem koristi modularnu arhitekturu — svaki sigurnosni test funkcioniše kao zaseban modul (npr. XSS modul, SQL Injection modul, CSRF modul). Ovakav pristup omogućava jednostavno dodavanje novih vrsta napada bez potrebe da se mijenja jezgro aplikacije. </p> 
-                <img src="slike/v13_scans_narrow.png" alt="">
+                <img src="slike/v13_scans_narrow.png" alt="vulnerability scanner interface screenshot">
                 <p> Alat funkcioniše kroz tri glavne faze testiranja:</p> 
                   <ol>
                     <li>Rekognicija</li>
@@ -89,7 +98,7 @@
                 <h3>Security Log Analyzer</h3>
                 <p> Security Log Analyzer je web aplikacija koju sam razvila kako bih olakšala analizu i vizualizaciju logova koji potiču iz različitih izvora, kao što su web serveri, aplikacije, autentikacijski servisi i mrežni uređaji. Projekat je nastao iz potrebe da se brže identifikuju anomalije i potencijalne sigurnosne prijetnje unutar velikih setova logova. </p> 
                 <p> Aplikacija omogućava korisniku da učita log datoteke, organizuje ih i filtrira po različitim kriterijima kao što su IP adresa, timestamp, tip događaja ili statusni kod. Na ovaj način je moguće precizno izolovati sumnjive aktivnosti ili greške koje mogu ukazivati na napade, pogrešne konfiguracije ili neuspješne pokušaje prijave. </p> 
-                <img src="slike/Charts-Library-800x359.png" alt="">
+                <img src="slike/Charts-Library-800x359.png" alt="Security log analyzer interface screenshot">
                 <p> Jedan od ključnih elemenata sistema je modul za detekciju obrazaca napada. Kroz kombinaciju regularnih izraza i logičkih pravila aplikacija automatski prepoznaje potencijalne brute-force napade, neuobičajene sekvence zahtjeva, ponavljane greške autentikacije, te neobične korisničke agente ili geolokacije IP adresa. Rezultati se prikazuju kroz jednostavan dashboard. </p> 
                 <p> Frontend dio aplikacije uključuje interaktivne grafove i vizualizacije, omogućene korištenjem biblioteke poput Chart.js, što pruža pregled trendova i statističkih podataka. Backend je razvijen u Node.js/Express okruženju, dok SQL baza služi za skladištenje strukturiranih log informacija, filtriranih rezultata i generisanih alert-ova. </p> 
                 <p> Dodatno sam kreirala Python skriptu za automatsku obradu sirovih logova prije unosa u sistem. Ova skripta normalizuje formate, izdvaja ključne podatke i priprema ih za parsiranje, čime aplikacija može raditi sa logovima različitog porijekla. </p> 
@@ -126,6 +135,7 @@
     </body>
 
 </html>
+
 
 
 
