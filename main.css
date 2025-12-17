@@ -6,19 +6,34 @@
 }
 
 html, body{
-   height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body { 
-   display: flex;
-    flex-direction: column;
+   display: block;
     background: #000000; 
     font-family: "Sometype mono", monospace;
     font-weight: 400;
     color: #E9EAED;
-    height: fit-content;
+    min-height: 100vh;
+}
+
+/* Scrollbar za citavu stranicu */
+body::-webkit-scrollbar, .modal-content::-webkit-scrollbar, .left-col::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb, .modal-content::-webkit-scrollbar-thumb, .left-col::-webkit-scrollbar-thumb {
+    background: #77e48b;
+    opacity: 0.5;
+    border: 2.5px ridge black;
+    border-radius: 8px;
+}
+
+body::-webkit-scrollbar-track, .modal-content::-webkit-scrollbar-track, .left-col::-webkit-scrollbar-track {
+    background: rgba(0,0,0);
+    border: 1px solid #2d2d2d;
 }
 
 p, ol, ul, h3{
@@ -26,35 +41,63 @@ p, ol, ul, h3{
   margin: auto, 0;
 }
 
-.main {
-  margin: 1% 5%; 
-  display: grid;
-  grid-template-columns: 1fr;
-  flex: 1;
+img{
+  display: inline-block;    /* ponaša se kao riječ/kartica */
+  margin: 4px;        
+  border: 3px ridge #E5DFD0;         
+  border-radius: 4px;                
+}
+/*---navbar---*/
+
+#ime-u-cosku{
+  display: flex;
   align-items: center;
 }
-
-#naslovna {
-  padding-top: 15%;
-}
-
 #ime-u-cosku, #cv {
   position: fixed; 
-  top: 15px;
+  top: 8px;
   left: 15px; 
   font-weight: 400; 
-  font-size:20px; 
+  font-size: 18px; 
   text-decoration: none;
   color: #E9EAED;
-  margin: 0.4%;  
+  margin: 0.4%;
   text-shadow: 2px 2px #36815c;
+  gap: 8px;
 }
+
+#cv{
+  top: 13px;
+  right: 70px;
+  width: 25px;
+  left: auto;
+  border: 1px solid white;
+  padding: 1.5px 2px 1.5px 5px;
+}
+
 
 #ime-u-cosku:hover, #cv:hover {
   color: #77e48b;
   text-shadow: none;
   font-weight: 700; 
+  filter: brightness(0)
+    saturate(100%)
+    invert(78%)
+    sepia(24%)
+    saturate(559%)
+    hue-rotate(83deg)
+    brightness(95%)
+    contrast(92%);
 }
+
+#favicon-cosak{
+  border: none;
+  background: none;
+  width: 25px;
+  vertical-align: middle;
+}
+
+
 
 
 #menu-toggle {
@@ -83,6 +126,10 @@ p, ol, ul, h3{
   transition: 0.4s;
 }
 
+.hamburger:hover span{
+  background: #77e48b;
+}
+
 /* --- Hamburger animation when opened --- */
 #menu-toggle:checked + .hamburger span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
@@ -100,7 +147,7 @@ p, ol, ul, h3{
 .overlay {
   position: fixed;
   top: 75px;
-  right: -100%; /* hidden by default */
+  right: -100%; /*sakriveno*/
   width: 250px;
   height: 100vh;
   background: rgba(0,0,0,0.89);
@@ -111,11 +158,8 @@ p, ol, ul, h3{
   transition: right 0.4s ease;
   z-index: 1000;
   
-  border-width: 5px;
-  border-style: ridge; 
-  border-color:#E9EAED; 
+  border: 5px ridge #E9EAED; 
   border-radius: 10px;
-  /*border-top: 0px;*/
 }
 
 .overlay a {
@@ -149,11 +193,33 @@ p, ol, ul, h3{
   border-bottom: 5px ridge #ffffff;
 }
 
+
+
 #odabrano {
   background: rgba(255,255,255,0.1);
 }
 
-/* dio css koristen za animaciju na pozadini
+
+/*index*/
+
+.main {
+  margin: 1% 5%; 
+  display: grid;
+  grid-template-columns: 1fr;
+  flex: 1;
+  align-items: center;
+}
+
+#naslovna {
+  padding-top: 35vh;
+}
+
+#istaknuto {
+  background-color: #30C48E; 
+  color: #ffffff;
+}
+
+/* dio css koristen za animaciju na pozadini glavne stranice
  uradjeno po tutorijalu sa: https://dev.to/uuuulala/making-background-blob-animation-in-just-15kb-step-by-step-guide-2482 */
 
         @keyframes rotate {
@@ -183,86 +249,21 @@ p, ol, ul, h3{
         }
 
 
-#cv{
-  top: 10px;
-  left: 180px;
-  border: 1px solid white;
-  padding: 4px;
-}
-
-
-svg {
-  z-index: -10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.svg-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -100000;
-  opacity: 0.7;
-  transform: scaleX(1.2);
-  pointer-events: none;
-  overflow: hidden;
-
-}
-
-.svg-wrapper svg {
-  animation: breathe 16s ease-in-out infinite;
-}
-
-@keyframes breathe {
-    0%   { transform: rotate(0deg) scale(1); }
-    50%  { transform: rotate(-3deg) scale(1.04); }
-    100% { transform: rotate(0deg) scale(1); }
-}
-
 .opis{
     padding: 3.5em;   
     background: rgba(13, 24, 33, 0.70);
     backdrop-filter: blur(6px);
     border: 3px ridge #E5DFD0;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
     z-index: 10;
     display: flex;
     flex-direction: column;
 }
 
-
-#kontakt{
-  margin: 0% 5%;
-  height: 200px;
-  padding: 1%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 3%;
-}
-#kontakt img{
-  max-height: 90%;
-  max-width: 35%;
-  border: 3px ridge white;
-  border-radius: 50%;
-}
-
-
-#istaknuto {
-  background-color: #30C48E; 
-  color: #ffffff;
-}
-
 #about{
-  margin: 30vh 5% 5%;
+  margin: 40vh 5% 5%;
 }
-
 #ikonice-container {
     gap: 7px;
     padding: 0;
@@ -309,11 +310,63 @@ svg {
 
 } 
 
+.tipka p:hover, h2:hover, #ikonice-container img:hover {
+  transform: scale(0.9);
+}
+
+/*pozadina na drugim str*/
+
+svg {
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100000;
+  opacity: 0.7;
+  transform: scale(1.2);
+  pointer-events: none;
+  overflow: hidden;
+
+}
+
+.svg-wrapper svg {
+  animation: a1 16s ease-in-out infinite;
+}
+
+@keyframes a1 {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(-3deg) scale(1.04); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/*naslovi drugih stranica*/
+.tipka h2{
+  width: fit-content;
+  margin-top: 80px;
+  margin-bottom: 0%;
+  margin-left: 0%
+}
+
+
+
+
+
+
+/*projekti*/
+
 .projekti-container {
   padding: 2%;   
-  border-width: 5px;
-  border-style: ridge; 
-  border-color:#E9EAED; 
+  border: 3px ridge #E9EAED; 
   border-radius: 15px;
   z-index: 10;
   display: flex;
@@ -331,9 +384,7 @@ svg {
   margin: 1%;
   background-color: #000000; 
   padding: 2%;   
-  border-width: 5px;
-  border-style: ridge; 
-  border-color:#E9EAED; 
+  border: 3px ridge #E9EAED; 
   border-radius: 15px;
   z-index: 10;
   flex: 1;
@@ -342,15 +393,6 @@ svg {
 }
 
 .projekat-pregled:hover {
-  
-  background-color: #000000; 
-  padding: 2%;   
-  border-width: 5px;
-  border-style: ridge; 
-  border-color:#E9EAED; 
-  border-radius: 15px;
-  z-index: 10;
-  flex: 1;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -371,10 +413,10 @@ svg {
 
 .modal {
   position: fixed;
-  top: 0px;
+  top: 60px;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(6px);
@@ -383,7 +425,7 @@ svg {
   justify-content: center;
   align-items: center;
 
-  padding: 10px 0;            /* prostor za skrol */
+  padding: 0px 0;            /* prostor za skrol */
   z-index: 9999;              /* iznad svega */
 }
 
@@ -403,10 +445,11 @@ svg {
   width: 70%;
   max-height: 75vh;           /* da može scroll */
   overflow-y: auto;           /* skrol unutar prozora */
-  
+  overscroll-behavior: contain;
+
   background: rgba(0, 0, 0, 0.7);
   border: 4px ridge #E9EAED;
-  border-radius: 15px;
+  border-radius: 10px;
   
   color: #E9EAED;
   padding: 30px;
@@ -415,6 +458,14 @@ svg {
 
 .modal-content h2{
   padding-left: 0%;
+}
+
+.modal-content h3{
+  font-size: 28px;
+}
+.modal-content img{
+  width: 70%;
+  margin-left: 5%;
 }
 
 .close {
@@ -432,22 +483,15 @@ svg {
 }
 
 .close:hover {
-  color: #ffffff;
+  color: #E5DFD0;
 }
 
-
-img{
-  padding: 0;
-  display: inline-block;    /* ponaša se kao riječ/kartica */
-  margin: 4px;
-  background: #36815c;              
-  border: 4px ridge white;         
-  border-radius: 4px;                
-  transition: transform 0.02s ease-in;
+body:has(.modal:target) footer {
+    display: none;
 }
 
-img:hover {
-  transform: scale(1.05);
+body:has(.modal:target) {
+    overflow: hidden;
 }
 
 #naslov{
@@ -456,30 +500,20 @@ img:hover {
   margin-bottom: 1em;
 }
 
-.tipka h2{
-  width: fit-content;
-  margin-top: 80px;
-  margin-bottom: 0%;
-  margin-left: 0%
-}
 
 
-.tipka p:hover, h2:hover {
-  transform: scale(0.9);
-}
+/*button*/
 
-
-
-#dugme1, #x {
+#dugme1, #x, .img-close {
   margin-left: 15.2%; 
   margin-top: 4%; 
   text-decoration: none;
   display: inline;
   width:  fit-content;
   color: #E5DFD0;
-    border: 2px ridge #E5DFD0;
-    padding: 12px 16px;
-    font-size: 14px;
+  border: 2px ridge #E5DFD0;
+  padding: 12px 16px;
+  font-size: 14px;
   cursor: pointer;
   transition: transform 0.5s ease, filter 0.7s ease;
   box-shadow: none;
@@ -491,19 +525,35 @@ img:hover {
   margin: 0;
 }
 
-#dugme1:hover, #x:hover {
+#dugme1:hover, #x:hover, .img-close:hover {
   background-color: #E5DFD0;
   color: #000;
 }
 
+/*kontakt*/
 
+#kontakt{
+  margin: 0% 5%;
+  height: 200px;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3%;
+}
+#kontakt img{
+  max-height: 90%;
+  max-width: 35%;
+  border: 3px ridge white;
+  border-radius: 50%;
+}
 
 form {
   margin: 2% 5% 5%;
   margin-top: 80px;
   background: rgba(13, 24, 33, 0.70);
   backdrop-filter: blur(10px);
-  border: 5px ridge #ffffff;
+  border: 3px ridge #E5DFD0;
   padding: 30px;
   border-radius: 15px;
 }
@@ -529,19 +579,20 @@ form #x{
   padding: 15px;  
 }
 
+/*footer*/
 
 footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  margin-top: auto;
   color: white;
-  position: static;
   z-index: 4000;
-  background: #000;
-  padding: 15px;
   font-size: 14px;
   height: auto;
+  background: #000;
+  padding: 15px;
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 footer img{
@@ -560,17 +611,14 @@ footer img{
   text-align: right;
 }
 
-
+/*galerija*/
 .gallery {
-
-    margin: 5%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 2%;   
-  border-width: 5px;
-  border-style: ridge; 
-  border-color:#E9EAED; 
+  margin: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 2%;   
+  border: 3px ridge #E5DFD0;
   border-radius: 15px;
   background: rgba(13,24,33, 0.5);
   backdrop-filter: blur(10px);
@@ -582,6 +630,50 @@ footer img{
     object-fit: cover;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
+.gallery img:hover{
+  transform: scale(1.03);
+}
+
+
+.img-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.img-modal:target {
+  display: flex;
+}
+
+.img-modal img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 4px ridge #E9EAED;
+  border-radius: 12px;
+}
+.img-close {
+  position: fixed;
+  top: 0px;
+  right: 25px;
+}
+
+#galerija {
+  margin: 0% 5%;
+  padding: 2% 2%;
+}
+
+body:has(.img-modal:target) {
+  overflow: hidden;
+}
+
+
+/*blog*/
 
 .post-card {
     padding: 1em;
@@ -611,6 +703,7 @@ footer img{
 .post-content {
     width: 95%;
     padding: 0.9rem 1.2rem;
+    
 }
 
 .post-content h3, .modal-content h3 {
@@ -619,13 +712,6 @@ footer img{
     text-shadow: 2px 2px #000;
 }
 
-.modal-content h3{
-  font-size: 28px;
-}
-.modal-content img{
-  width: 70%;
-  margin-left: 5%;
-}
 
 .post-excerpt {
     font-size: 12px;
@@ -649,22 +735,24 @@ footer img{
     color: #000;
 }
 
-/* === TWO COLUMN LAYOUT WITH SEPARATE SCROLLING === */
+/* === TWO COLUMN LAYOUT WITH SEPARATE SCROLLING ===
+
+zamijenjene su strane jer sam u zadnji cas skontala da to bolje izgleda*/
 
 .blog-grid {
-    display: grid;
+     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 2rem;
-    height: 120vh;
-    overflow: hidden;                     /* ključ — obje kolone jednake visine */
-    margin-top: 60px; /* ili 90px, koliko ti treba */
-    padding: 0.5% 5% 0px;
-    box-sizing: border-box;
-    margin-bottom: 0;
+
+   height: calc(100vh - 60px); /* navbar */
+    overflow: hidden;
+
+    margin-top: 65px;
+    padding: 0% 5% 0;
 }
 
 .blog-col {
-    overflow-y: auto;                  /* svaki scrolla za sebe */
+     overflow-y: auto;
 }
 
 /* Lijeva kolona (postovi) */
@@ -684,24 +772,11 @@ footer img{
     color: #E9EAED;
 }
 
-/* Scrollbar styling u tvom stilu */
-.blog-col::-webkit-scrollbar {
-    width: 10px;
-}
 
-.blog-col::-webkit-scrollbar-thumb {
-    background: #77e48b;
-    opacity: 0.5;
-    border: 2.5px ridge rgb(0, 0, 0);
-    border-radius: 8px;
-}
-
-.blog-col::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.05);
-}
 
 .right-col{
   padding: 20px 3% 3% 3%;
+  height: 85vh;
 }
 .left-col {
         padding: 3%;
@@ -709,46 +784,7 @@ footer img{
 
 
 @media only screen and (max-width: 800px){
-    .blog-grid {
-        grid-template-columns: 1fr;   /* → jedna kolona */
-        height: 100%;                 /* stranica normalno skrola */
-        padding: 10px 5% 20px;
-    }
-
-    .left-col {
-        overflow-y: visible;          /* → više ne skrola */
-    }
-
-    .right-col {
-        overflow-y: auto;             /* → sidebar i dalje skrola */
-        height: 70vh;                 /* koliko visoko želiš */
-        margin-top: 15px;
-        margin-bottom: 2px;
-        height: fit-content;
-    }
-    .post-content h3 {
-        font-size: 20px;
-    }
-    .post-content p, .sidebar p{
-        font-size: 16px;
-    }
-
-    .sidebar {
-      margin-top: 20px;
-      padding: 0.5em;
-    }
-    
-    .svg-wrapper {
-    width: 100em;
-  }
-
-    
-}
-
-
-
-@media only screen and (max-width: 700px) {
-  p, ol, ul{
+   p, ol, ul{
     margin: 15px;
     font-size: 12px;
   }
@@ -758,19 +794,23 @@ footer img{
     font-size: 15px;
   }
 
+  #cv{
+    top: 16px;
+  }
+
    .modal-content {
     width: 90% !important;
     padding: 15px;
    }
 
    .modal-content h2{
-    font-size: 1.3rem;  /* ili nešto po tvom ukusu */
-    padding-left: 10px; /* smanji padding */
-    white-space: normal; /* dozvoli prelazak u novi red */
+    font-size: 1.3rem;  
+    padding-left: 10px; 
+    white-space: normal; 
   }
   .modal-content #x{
-    font-size: 1.3rem;  /* ili nešto po tvom ukusu */
-    padding: 4px; /* smanji padding */ /* dozvoli prelazak u novi red */
+    font-size: 1.3rem;  
+    padding: 4px; 
   }
   .tipka {
     padding-right: 10%;
@@ -781,12 +821,11 @@ footer img{
       font-size: 120%;  
   }
   .main {
-    padding-top: 25vh;
     margin: 0%;
   }
 
   #about {
-    margin-top: 80%;
+    margin-top: 100%;
   }
   .projekat-pregled {
     padding: 8%;
@@ -800,12 +839,55 @@ footer img{
   }
 
   .opis{
-    padding: 10px
+    padding: 10px;
   }
 
     #naslovna {
-    padding-top: 50%
+    padding-top: 35vh;
+  } 
+    body {
+    overflow-y: auto;
   }
+
+  .blog-grid {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
+  .blog-col {
+    overflow: visible;
+    max-height: none;
+  }
+
+  .right-col {        /* → sidebar i dalje skrola */                /* koliko visoko želiš */
+        margin-top: 15px;
+        margin-bottom: 2px;
+        height: fit-content;
+    }
+  .post-content h3 {
+        font-size: 20px;
+    }
+  .post-content p, .sidebar p{
+        font-size: 16px;
+    }
+
+  .sidebar {
+      margin-top: 20px;
+      padding: 0.5em;
+    }
+    
+  .svg-wrapper {
+    width: 100em;
+  }
+  footer {
+    margin-top: 80px;
+    padding-top: 30px;
+    background: #000;
+  }
+
+    
 }
+
 
 
